@@ -1,5 +1,6 @@
 RichEditor for Android
 =============
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-richeditor--android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1696)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Download](https://api.bintray.com/packages/wasabeef/maven/richeditor-android/images/download.svg)](https://bintray.com/wasabeef/maven/richeditor-android/_latestVersion)
 
@@ -34,8 +35,12 @@ Supported Functions
 - [x] Outdent
 - [x] Insert Image
 - [x] Insert Link
+- [x] Checkbox
 - [x] Text Color
 - [x] Text Background Color
+- [x] Text Font Size
+- [x] Unordered List (Bullets)
+- [x] Ordered List (Numbers)
 
 Attribute change of editor
 ---
@@ -44,6 +49,8 @@ Attribute change of editor
 - [x] Width
 - [x] Height
 - [x] Placeholder
+- [x] Load CSS
+- [x] State Callback
 
 **Milestone**
 
@@ -71,27 +78,59 @@ repositories {
 }
 
 dependencies {
-    compile 'jp.wasabeef:richeditor-android:0.0.6@aar'
+    compile 'jp.wasabeef:richeditor-android:1.2.0'
 }
 ```
+### Default Setting for Editor
+---
 
-### Functions
+**Height**
+```java
+editor.setEditorHeight(200);
+```
+
+**Font**
+```java
+editor.setEditorFontSize(22);
+editor.setEditorFontColor(Color.RED);
+```
+
+**Background**
+```java
+editor.setEditorBackgroundColor(Color.BLUE);
+editor.setBackgroundColor(Color.BLUE);
+editor.setBackgroundResource(R.drawable.bg);
+editor.setBackground("https://raw.githubusercontent.com/wasabeef/art/master/chip.jpg");
+```
+
+**Padding**
+```java
+editor.setPadding(10, 10, 10, 10);
+```
+
+**Placeholder**
+```java
+editor.setPlaceholder("Insert text here...");
+```
+
+**Others**  
+Please refer the [samples](https://github.com/wasabeef/richeditor-android/blob/master/sample/src/main/java/jp/wasabeef/sample/MainActivity.java) for usage.
+
+### Functions for ContentEditable
+---
 
 **Bold**
 ```java
-RichEditor editor = (RichEditor) findViewById(R.id.editor);
 editor.setBold();
 ```
 
 **Italic**
 ```java
-RichEditor editor = (RichEditor) findViewById(R.id.editor);
 editor.setItalic();
 ```
 
 **Insert Image**
 ```java
-RichEditor editor = (RichEditor) findViewById(R.id.editor);
 editor.insertImage("https://raw.githubusercontent.com/wasabeef/art/master/twitter.png","twitter");
 ```
 
@@ -122,6 +161,7 @@ Please [ping](mailto:dadadada.chop@gmail.com) me or send a pull request if you w
 Icon | Application
 ------------ | -------------
 <img src="https://lh6.ggpht.com/6zKH_uQY1bxCwXL4DLo_uoFEOXdShi3BgmN6XRHlaJ-oA1svmq6y1PZkmO50nWQn2Lg=w300-rw" width="48" height="48" /> | [Ameba Ownd](https://play.google.com/store/apps/details?id=jp.co.cyberagent.madrid)
+<img src="https://lh3.googleusercontent.com/st_DiIlM148vzG23ccujtBzx0tMeb7cDC5fDmLSERS-Nr8M_F-PTw4W_jWJsH9mO_b4=w300-rw" width="48" height="48" /> | [ScorePal](https://play.google.com/store/apps/details?id=com.hfd.scorepal)
 
 Developed By
 -------
